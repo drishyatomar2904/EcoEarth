@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoEarth - Reddit Environmental Impact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="row echoearth-header p-3 mb-4">
+            <div class="col">
+                <h1 class="h3 mb-0">🌍 EchoEarth</h1>
+                <small class="text-light">Reddit Communities Driving Environmental Change</small>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-light text-success me-2" id="lastUpdated">Loading...</span>
+                <span class="badge bg-warning" id="dataSource">Reddit</span>
+            </div>
+        </header>
+
+        <!-- Overview Cards -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5 class="card-title" id="totalPosts">0</h5>
+                        <p class="card-text">Reddit Posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-info">
+                    <div class="card-body">
+                        <h5 class="card-title" id="totalNews">0</h5>
+                        <p class="card-text">News Articles</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-title" id="effectivenessScore">0%</h5>
+                        <p class="card-text">Community Impact</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <div class="card-body">
+                        <h5 class="card-title" id="positiveSentiment">0%</h5>
+                        <p class="card-text">Positive Engagement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <!-- Trending Subreddits -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">🔥 Trending Environmental Subreddits</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="trendingTopics"></div>
+                    </div>
+                </div>
+
+                <!-- Top Contributors -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">🏆 Top Community Contributors</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="topInfluencers"></div>
+                    </div>
+                </div>
+
+                <!-- Community Impact -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">🌱 Real World Impact</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="groundImpact"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <!-- AI Analysis -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">🤖 Community Insights</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="aiAnalysis"></div>
+                    </div>
+                </div>
+
+                <!-- Platform Engagement -->
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">📊 Engagement Analytics</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="platformBreakdown"></div>
+                    </div>
+                </div>
+
+                <!-- Sample Posts -->
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0">💬 Live Community Discussions</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="samplePosts"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="row mt-4 py-3 bg-light text-center">
+            <div class="col">
+                <small class="text-muted">
+                    EchoEarth &copy; 2024 | Reddit Communities Creating Environmental Change | 
+                    <span id="apiStatus" class="badge bg-secondary">Checking API Status...</span>
+                </small>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

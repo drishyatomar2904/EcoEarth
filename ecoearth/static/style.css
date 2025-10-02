@@ -1,0 +1,280 @@
+﻿/* EchoEarth Brand Colors */
+:root {
+    --echoearth-primary: #2E8B57;
+    --echoearth-secondary: #228B22;
+    --echoearth-accent: #20B2AA;
+    --echoearth-light: #F0FFF0;
+    --echoearth-dark: #006400;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: ''Segoe UI'', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.echoearth-header {
+    background: linear-gradient(135deg, var(--echoearth-primary) 0%, var(--echoearth-dark) 100%);
+    color: white;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.1);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.15);
+}
+
+.card-header {
+    border-bottom: 3px solid var(--echoearth-light);
+    font-weight: 600;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.topic-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--echoearth-primary) 0%, var(--echoearth-accent) 100%);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    margin: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.topic-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.influencer-card {
+    background: linear-gradient(135deg, #ffffff 0%, var(--echoearth-light) 100%);
+    border-left: 4px solid var(--echoearth-primary);
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.influencer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.15);
+    border-left: 4px solid var(--echoearth-accent);
+}
+
+.impact-metric {
+    text-align: center;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 10px;
+    margin: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.impact-metric:hover {
+    background: linear-gradient(135deg, #ffffff 0%, var(--echoearth-light) 100%);
+    transform: scale(1.05);
+}
+
+.impact-value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--echoearth-primary);
+    margin-bottom: 0.3rem;
+}
+
+.impact-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.post-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card::before {
+    content: '''';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, var(--echoearth-primary) 0%, var(--echoearth-accent) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.15);
+    transform: translateY(-3px);
+}
+
+.post-card:hover::before {
+    opacity: 1;
+}
+
+.post-author {
+    font-weight: bold;
+    color: var(--echoearth-dark);
+    font-size: 0.9rem;
+}
+
+.post-content {
+    margin: 0.8rem 0;
+    color: #212529;
+    line-height: 1.5;
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.platform-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    margin: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.platform-twitter {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0d8bd9 100%);
+    color: white;
+}
+
+.platform-bluesky {
+    background: linear-gradient(135deg, #1185FE 0%, #0a6dc9 100%);
+    color: white;
+}
+
+.platform-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: " (Echoes updating...)";
+    color: var(--echoearth-primary);
+    font-style: italic;
+}
+
+@keyframes echoPulse {
+    0% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.7);
+    }
+    50% { 
+        transform: scale(1.02);
+    }
+    100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(46, 139, 87, 0);
+    }
+}
+
+.pulse {
+    animation: echoPulse 2s infinite;
+}
+
+.status-online {
+    color: var(--echoearth-primary);
+}
+
+.status-offline {
+    color: #dc3545;
+}
+
+.status-warning {
+    color: #ffc107;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0 10px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .impact-metric {
+        padding: 0.5rem;
+    }
+    
+    .impact-value {
+        font-size: 1.3rem;
+    }
+    
+    .topic-badge {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--echoearth-primary) 0%, var(--echoearth-accent) 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--echoearth-dark) 0%, var(--echoearth-primary) 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--echoearth-dark);
+}
+
+.text-echoearth {
+    color: var(--echoearth-primary) !important;
+}
+
+.bg-echoearth {
+    background-color: var(--echoearth-primary) !important;
+}
