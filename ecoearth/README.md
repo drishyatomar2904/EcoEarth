@@ -26,5 +26,7 @@ Right now, millions of people post about environmental issues, but nobody knows 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/echoearth.git
+git clone https://github.com/drishyatomar2904/EcoEarth.git
 cd echoearth
+python app.py
+
